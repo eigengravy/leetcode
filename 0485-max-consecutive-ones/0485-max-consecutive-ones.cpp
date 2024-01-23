@@ -5,7 +5,7 @@ public:
         int len = 0;
         while (i + j < nums.size()) {
             if (nums[i+j] == 0){
-                i++;
+                i=i+j+1;
                 j=0;
             } else {
                 j++;
@@ -14,19 +14,6 @@ public:
                 }
                 continue;
             }
-            // if (nums[i] == 1 && i != nums.size()-1) {
-            //     j++;
-            //     if (nums[i + j] == 1) {
-            //         continue;
-            //     } else {
-            //         i += j;
-            //         if (j > len) {
-            //             len = j;
-            //         }
-            //         j = 0;
-            //     }
-            // }
-            // i++;
         }
         return len;
     }
