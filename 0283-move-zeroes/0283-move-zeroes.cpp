@@ -5,11 +5,9 @@ public:
        for(int i=0;i<nums.size();i++){
            if(nums[i] != 0){
                nums[w] = nums[i];
+               nums[i] = 0;
                w++;
            }
-       }
-       for(int i=w;i<nums.size();i++){
-           nums[i]=0;
        }
     }
 };
