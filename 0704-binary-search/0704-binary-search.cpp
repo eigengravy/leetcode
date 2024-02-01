@@ -10,13 +10,9 @@ public:
                 right = mid - 1;
             } else if (nums[mid] < target) {
                 left = mid + 1;
-            } else {
+            } else
                 return mid;
-            }
         }
         return -1;
     }
-    return -1;
-}
-}
-;
+};
