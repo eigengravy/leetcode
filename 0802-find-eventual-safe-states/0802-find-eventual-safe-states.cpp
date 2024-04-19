@@ -1,25 +1,20 @@
 class Solution {
     bool dfsCheck(int node, vector<vector<int>>& adj, vector<int>& vis,
-                  vector<int>& pathVis, vector<int>& check) {
+                  vector<int>& check) {
         vis[node] = 1;
-        // pathVis[node] = 1;
         check[node] = 0;
         for (auto it : adj[node]) {
             if (!vis[it]) {
-                if (dfsCheck(it, adj, vis, pathVis, check) == true) {
+                if (dfsCheck(it, adj, vis, check) == true) {
                     check[node] = 0;
                     return true;
                 }
-
-            // } else if (pathVis[it]) {
-                } else if (!check[it]) {
-
+            } else if (!check[it]) {
                 check[node] = 0;
                 return true;
             }
         }
         check[node] = 1;
-        // pathVis[node] = 0;
         return false;
     }
 
@@ -32,7 +27,7 @@ public:
         vector<int> safeNodes;
         for (int i = 0; i < V; i++) {
             if (!vis[i]) {
-                dfsCheck(i, adj, vis, pathVis, check);
+                dfsCheck(i, adj, vis, check);
             }
         }
         for (int i = 0; i < V; i++) {
