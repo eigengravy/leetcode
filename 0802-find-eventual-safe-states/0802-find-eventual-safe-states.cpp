@@ -6,11 +6,11 @@ class Solution {
         for (auto it : adj[node]) {
             if (!vis[it]) {
                 if (dfsCheck(it, adj, vis, check) == true) {
-                    check[node] = 0;
+                    // check[node] = 0;
                     return true;
                 }
             } else if (!check[it]) {
-                check[node] = 0;
+                // check[node] = 0;
                 return true;
             }
         }
